@@ -1,0 +1,11 @@
+{%for comment in comments %}
+    <li>
+        {{comment.parent}}
+
+        {% if comment.children|length %}
+        <ul>
+            {% include "comments.html" with comments=comment.children %}
+        </ul>
+        {% endif %}
+    </li>
+{% endfor %}

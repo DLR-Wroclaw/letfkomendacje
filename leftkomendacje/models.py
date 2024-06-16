@@ -19,7 +19,7 @@ class Bookmark(models.Model):
     is_archived=models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.id} {self.title} {self.url}'
+        return f'{self.id}: {self.title}-{self.url}'
 
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET(get_sentinel_user))

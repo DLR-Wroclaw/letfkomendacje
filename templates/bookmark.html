@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container my-5">
+    <h1>{{bookmark.title}}</h1>
+    <div class="col-lg-8 px-0 ">
+        <small>{{bookmark.url}}</small>
+      
+      <ul class="list-group">
+        {% include "comments.html" %}
+        </ul>
+      <hr class="col-1 my-4" />
+
+      <a href="https://getbootstrap.com" class="btn btn-primary">Read the Bootstrap docs</a>
+      <a href="https://github.com/twbs/examples" class="btn btn-secondary">View on GitHub</a>
+    </div>
+  </div>
+{% endblock %}
