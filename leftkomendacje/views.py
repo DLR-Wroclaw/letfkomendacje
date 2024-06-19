@@ -11,7 +11,18 @@ class BestListView(ListView):
     context_object_name = "bookmarks"
 
     def get_queryset(self):
-        return Bookmark.objects.filter(created_at__gte=date.today()-timedelta(days=5)).order_by('-rating')
+        delta=self.kwargs.get('delta')
+        if delta==0:
+            return Bookmark.objects.order_by('-rating')
+        
+        if not delta:
+            delta= 5
+        return Bookmark.objects.filter(created_at__gte=date.today()-timedelta(days=delta)).order_by('-rating')
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        data=super().get_context_data(**kwargs)
+        data['delta']=self.kwargs.get('delta')
+        return data
 
 class NewListView(ListView):
     template_name = "new_list.html"
