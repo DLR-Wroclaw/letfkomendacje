@@ -7,9 +7,14 @@ from django.db import models
 def get_sentinel_user():
     return get_user_model().objects.get_or_create(username="deleted")[0]
 
+class Category(models.Model):
+    name= models.CharField(max_length=200)
+    description= models.CharField(max_length=200)
+
 
 class Bookmark(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET(get_sentinel_user))
+    category= models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=200)
@@ -33,3 +38,4 @@ class Comment(models.Model):
         if self.parent_comment.id == self.id:
             raise ValidationError("Parent comment can't be self")
         
+

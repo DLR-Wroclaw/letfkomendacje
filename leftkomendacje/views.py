@@ -17,7 +17,25 @@ class BestListView(ListView):
         
         if not delta:
             delta= 5
-        return Bookmark.objects.filter(created_at__gte=date.today()-timedelta(days=delta)).order_by('-rating')
+        return Bookmark.objects.filter(created_at__gte=date.today()-timedelta(days=delta),is_archived=False).order_by('-rating')
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        data=super().get_context_data(**kwargs)
+        data['delta']=self.kwargs.get('delta')
+        return data
+    
+class FreshListView(ListView):
+    template_name = "fresh_list.html"
+    context_object_name = "bookmarks"
+
+    def get_queryset(self):
+        delta=self.kwargs.get('delta')
+        if delta==0:
+            return Bookmark.objects.order_by('-created_at')
+        
+        if not delta:
+            delta= 5
+        return Bookmark.objects.filter(created_at__gte=date.today()-timedelta(days=delta), is_archived=False).order_by('-created_at')
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         data=super().get_context_data(**kwargs)

@@ -4,63 +4,61 @@
   <div class="col-lg-8 px-0">
     <small>{{bookmark.url}}</small>
 
-    {% comment %} <ul class="list-group">
-      {% include "comments.html" %}
-    </ul> {% endcomment %}
-
     {% comment %}
+    <ul class="list-group">
+      {% include "comments.html" %}
+    </ul>
+    {% endcomment %}
+  </div>
+  {% comment %} <div class="just-padding">
+    <div class="list-group list-group-root card">
+      <a href="#item-1" class="list-group-item" data-bs-toggle="collapse">
+        <i class="fas fa-angle-right mr-2"></i>Item 1
+      </a>
+      <div class="list-group collapse" id="item-1">
+        <a href="#item-1-1" class="list-group-item" data-bs-toggle="collapse">
+          <i class="fas fa-angle-right mr-2"></i>Item 1.1
+        </a>
+        <div class="list-group collapse" id="item-1-1">
+          <a href="#" class="list-group-item">Item 1.1.1</a>
+          <a href="#" class="list-group-item">Item 1.1.2</a>
+          <a href="#" class="list-group-item">Item 1.1.3</a>
+        </div>
+
+        <a href="#item-1-2" class="list-group-item" data-bs-toggle="collapse">
+          <i class="fas fa-angle-right mr-2"></i>Item 1.2
+        </a>
+        <div class="list-group collapse" id="item-1-2">
+          <a href="#" class="list-group-item">Item 1.2.1</a>
+          <a href="#" class="list-group-item">Item 1.2.2</a>
+          <a href="#" class="list-group-item">Item 1.2.3</a>
+        </div>
+
+        <a href="#item-1-3" class="list-group-item" data-bs-toggle="collapse">
+          <i class="fas fa-angle-right mr-2"></i>Item 1.3
+        </a>
+        <div class="list-group collapse" id="item-1-3">
+          <a href="#" class="list-group-item">Item 1.3.1</a>
+          <a href="#" class="list-group-item">Item 1.3.2</a>
+          <a href="#" class="list-group-item">Item 1.3.3</a>
+        </div>
+      </div>
+    </div> {% endcomment %}
+
     <div class="just-padding">
       <div class="list-group list-group-root card">
-        <a href="#item-1" class="list-group-item" data-bs-toggle="collapse">
-          <i class="fas fa-angle-right mr-2"></i>Item 1
-        </a>
-        <div class="list-group collapse" id="item-1">
-          <a href="#item-1-1" class="list-group-item" data-bs-toggle="collapse">
-            <i class="fas fa-angle-right mr-2"></i>Item 1.1
-          </a>
-          <div class="list-group collapse" id="item-1-1">
-            <a href="#" class="list-group-item">Item 1.1.1</a>
-            <a href="#" class="list-group-item">Item 1.1.2</a>
-            <a href="#" class="list-group-item">Item 1.1.3</a>
-          </div>
-
-          <a href="#item-1-2" class="list-group-item" data-bs-toggle="collapse">
-            <i class="fas fa-angle-right mr-2"></i>Item 1.2
-          </a>
-          <div class="list-group collapse" id="item-1-2">
-            <a href="#" class="list-group-item">Item 1.2.1</a>
-            <a href="#" class="list-group-item">Item 1.2.2</a>
-            <a href="#" class="list-group-item">Item 1.2.3</a>
-          </div>
-
-          <a href="#item-1-3" class="list-group-item" data-bs-toggle="collapse">
-            <i class="fas fa-angle-right mr-2"></i>Item 1.3
-          </a>
-          <div class="list-group collapse" id="item-1-3">
-            <a href="#" class="list-group-item">Item 1.3.1</a>
-            <a href="#" class="list-group-item">Item 1.3.2</a>
-            <a href="#" class="list-group-item">Item 1.3.3</a>
-          </div>
-        </div>
-      </div>
-      {% endcomment %}
-
-      <div class="just-padding">
-        <div class="list-group list-group-root card">
         {% include "comments.html" %}
-        </div>
-      </div>
-
-        <hr class="col-1 my-4" />
-
-        <a href="https://getbootstrap.com" class="btn btn-primary"
-          >Read the Bootstrap docs</a
-        >
-        <a href="https://github.com/twbs/examples" class="btn btn-secondary"
-          >View on GitHub</a
-        >
       </div>
     </div>
-    {% endblock %}
+
+    <hr class="col-1 my-4" />
+
+    <a href="https://getbootstrap.com" class="btn btn-primary"
+      >Read the Bootstrap docs</a
+    >
+    <a href="https://github.com/twbs/examples" class="btn btn-secondary"
+      >View on GitHub</a
+    >
   </div>
 </div>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Bookmark, Comment
+from .models import Bookmark, Category, Comment
 
 # Register your models here.
 
-admin.site.register([Bookmark,Comment])
+admin.site.register([Category,Bookmark,Comment])
